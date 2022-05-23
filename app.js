@@ -5,12 +5,28 @@ const promptUser = () => {
       {
          type:'type',
          name:'name',
-         message: 'What is your name?'
+         message: 'What is your name?',
+         validate: nameInput => {
+            if (nameInput) {
+               return true;
+            } else {
+               console.log("Please enter your name!");
+               return false;
+            }
+         }
       },
       {
          type:'input',
          name:'github',
-         message:'Enter your GitHub Username'
+         message:'Enter your GitHub Username (Required)',
+         validate: nameInput => {
+            if (nameInput) {
+               return true;
+            } else {
+               console.log("Please enter the Git Username");
+               return false;
+            }
+         } 
       },
       {
          type:'input',
@@ -43,7 +59,15 @@ const promptProject = protfolioData => {
       {
          type:'type',
          name:'description',
-         message:'Provide a description of the project (Required)'
+         message:'Provide a description of the project (Required)',
+         validate: userInput => {
+            if (userInput){
+               return true;
+            } else {
+               console.log("Please provide a description of the project");
+               return false;
+            }
+         }
       },
       {
          type:'checkbox',
@@ -54,7 +78,15 @@ const promptProject = protfolioData => {
       {
          type: 'input',
          name:'link',
-         message:'Enter the GitHub link to yout project. (Required)'
+         message:'Enter the GitHub link to yout project. (Required)',
+         validate: userInput => {
+            if (userInput){
+               return true;
+            } else {
+               console.log("Link is required!");
+               return false;
+            }
+         }
       },
       {
          type:'confirm',
