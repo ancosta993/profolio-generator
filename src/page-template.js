@@ -1,5 +1,6 @@
 // create the about section
 const generateAbout = aboutText => {
+
    if (!aboutText){
       return '';
    }
@@ -15,6 +16,7 @@ const generateAbout = aboutText => {
 
 // create the section for displaying projects
 const generateProjects = projectsArr => {
+   console.log(projectsArr);
 
    return ` 
       <section class='my-3' id='portfolio'>
@@ -60,6 +62,7 @@ const generateProjects = projectsArr => {
 };
 
 module.exports = templateData => {
+   console.log(templateData);
    // console.log(templateData);
    const {projects, about, ...header} = templateData;
   
@@ -72,6 +75,7 @@ module.exports = templateData => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Portfolio Demo</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+      <link rel="stylesheet" href="style.css">
    </head>
 
    <body>
